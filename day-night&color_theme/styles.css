@@ -1,0 +1,155 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --blueColor-1: #7462e1;
+  --blueColor-2: #3641b7;
+  --blueColor-3: #42caff;
+  --orange: #ff4600;
+  --purple: #ce00ff;
+  --greenColor: #ccffab;
+  --pinkColor: #ff6174;
+  --borderColor: #eeefff;
+  --black: #121713;
+  --grey: #232424;
+  --grey2: #494646;
+  --white: #fff;
+  --customColor: #42caff;
+  --transition-1: all 300ms ease-in-out;
+  --transition-2: all 500ms ease-in-out;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 62.5%; /*1.6rem = 16px*/
+}
+/*============================================= 
+       day/night Control start
+=============================================*/
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: var(--white);
+  color: var(--black);
+  transition: var(--transition-2);
+}
+
+body.dark {
+  --white: #000106;
+  --black: #fff;
+  --grey: #fff;
+  --grey2: #fff;
+}
+.theme-icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.5rem;
+  font-size: 3rem;
+  list-style: none;
+}
+theme-icon {
+    display: none;
+  }
+
+/*============================================= 
+         day/night Control end
+=============================================*/
+
+
+/*============================================= 
+         Color Control start
+=============================================*/
+.control {
+  position: fixed;
+  right: -4rem;
+  top: 15%;
+  transition: var(--transition-1);
+  z-index: 1000;
+}
+
+.control.open {
+  right: 0;
+}
+
+.control .widget {
+  position: absolute;
+  left: -3.7rem;
+  border-radius: 1rem 0 0 1rem;
+  padding: 0.5rem 0.7rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.control .widget i {
+  font-size: 2.3rem;
+  animation: spin 2s linear infinite;
+  color: #121713;
+}
+
+@keyframes spin {
+  0% {
+    tranform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.control .colors {
+  background-color: #fff;
+  padding: 1rem 0.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.control .colors span {
+  display: block;
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0.7rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.control .colors span:not(:last-child) {
+  margin-bottom: 0.7rem;
+}
+
+.control .colors span:nth-child(1) {
+  background-color: var(--pinkColor);
+}
+.control .colors span:nth-child(2) {
+  background-color: var(--blueColor-3);
+}
+.control .colors span:nth-child(3) {
+  background-color: var(--blueColor-1);
+}
+.control .colors span:nth-child(4) {
+  background-color: var(--orange);
+}
+.control .colors span:nth-child(5) {
+  background-color: var(--purple);
+}
+/*============================================= 
+         Color Control end
+=============================================*/
+
+
+
+
+.ss{
+  color: var(--customColor);
+}
